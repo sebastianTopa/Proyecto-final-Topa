@@ -1,8 +1,36 @@
 /* estilos del main */
 
+.Gridmain{
+    display: grid;
+    grid-template-areas: "h2 h2"
+                         "section iframe"
+                         "section iframe"
+}
+
+.gridh2{
+    grid-area: h2;
+}
+
+.gridiframe{
+    grid-area: iframe;
+    margin-top: 3rem;
+}
+
+.gridsection{
+    grid-area: section;
+}
+
+.gridimg{
+    grid-area: img;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
 .main-index{
     text-align: center;
 }
+
 main{
     h1{
     text-align: center;
@@ -34,17 +62,40 @@ p{
 
 /* estilos del main de actividades */
 
-.h1-actividades{
-    color: $color-usado1;
+.gridactividades{
+    display: grid;
+    grid-template-areas: "h1 h1"
+                         "ul img"
+                         "ul img"
+                         "p p"
 }
+
+.h1-actividades{
+ grid-area: h1;
+ color: $color-usado1;
+}
+
+.gridul{
+    grid-area: ul;
+}
+
 .campamento-nenes{
-    width: 25%;
+    grid-area: img;
+    width: 70%;
+}
+
+.gridp{
+    grid-area: p;
+    font-size: large;
 }
 
 main{
     ul{
         li{
             color: $color-texto;
+            @extend %estiloscentrar;
+            border: 15px solid $color-fondos;
+            margin: 10px;
         }
     }
 }
@@ -52,20 +103,25 @@ main{
 /* estilos del main de contactos */
 
 main{
-    form{
+     form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: cadetblue;
+        margin: 50px;
+        padding: 50px;
     }
 }
 
 .h1contacto{
-    text-align: start;
+    text-align: center;
     margin-top: 2px;
 }
 
 .pcontacto{
-    text-align: start;
     color: darkcyan;
-    display: inline;
+    display: flex;
+    text-align: center;
 }
 
 /* estilos main de nosotros */
@@ -97,10 +153,11 @@ main{
     .cabaña{
         width: 70%;
         grid-area: img;
+        margin: 2rem;
     }
     
     .h1nuestrahistoria{
-    background-color: tomato;
+    background-color: $color-fondos;
     color: black;
     border-radius: 100px;
     grid-area: h1;
@@ -119,4 +176,5 @@ main{
     .campamentoviejo{
         width: 70%;
         grid-area: img2;
+        margin: 2rem;
     }

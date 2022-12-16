@@ -1,7 +1,16 @@
 @charset "UTF-8";
 .p1, .p2 {
-  background-color: tomato;
-  font-size: 20px; }
+  color: black;
+  background-color: lightgrey;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center; }
+
+main ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 /* reset */
 * {
@@ -11,7 +20,7 @@
 
 /* estilos de header */
 header {
-  padding: 30px;
+  padding: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -28,6 +37,26 @@ header {
       border-radius: 300px; }
 
 /* estilos del main */
+.Gridmain {
+  display: grid;
+  grid-template-areas: "h2 h2" "section iframe" "section iframe"; }
+
+.gridh2 {
+  grid-area: h2; }
+
+.gridiframe {
+  grid-area: iframe;
+  margin-top: 3rem; }
+
+.gridsection {
+  grid-area: section; }
+
+.gridimg {
+  grid-area: img;
+  justify-content: center;
+  align-items: center;
+  width: 70%; }
+
 .main-index {
   text-align: center; }
 
@@ -55,27 +84,47 @@ main .img-fogata {
   width: 200px; }
 
 /* estilos del main de actividades */
+.gridactividades {
+  display: grid;
+  grid-template-areas: "h1 h1" "ul img" "ul img" "p p"; }
+
 .h1-actividades {
+  grid-area: h1;
   color: blueviolet; }
 
+.gridul {
+  grid-area: ul; }
+
 .campamento-nenes {
-  width: 25%; }
+  grid-area: img;
+  width: 70%; }
+
+.gridp {
+  grid-area: p;
+  font-size: large; }
 
 main ul li {
-  color: white; }
+  color: white;
+  border: 15px solid lightgrey;
+  margin: 10px; }
 
 /* estilos del main de contactos */
 main form {
-  background-color: cadetblue; }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: cadetblue;
+  margin: 50px;
+  padding: 50px; }
 
 .h1contacto {
-  text-align: start;
+  text-align: center;
   margin-top: 2px; }
 
 .pcontacto {
-  text-align: start;
   color: darkcyan;
-  display: inline; }
+  display: flex;
+  text-align: center; }
 
 /* estilos main de nosotros */
 .contenedorgrid {
@@ -120,10 +169,11 @@ main form {
 
 .cabaña {
   width: 70%;
-  grid-area: img; }
+  grid-area: img;
+  margin: 2rem; }
 
 .h1nuestrahistoria {
-  background-color: tomato;
+  background-color: lightgrey;
   color: black;
   border-radius: 100px;
   grid-area: h1; }
@@ -136,12 +186,13 @@ main form {
 
 .campamentoviejo {
   width: 70%;
-  grid-area: img2; }
+  grid-area: img2;
+  margin: 2rem; }
 
 /* estilos del footer */
 footer {
   text-align: center;
-  background-color: blueviolet; }
+  background-color: lightgrey; }
   footer h2 {
     font-size: 15px;
     margin-top: 10px; }
@@ -164,19 +215,6 @@ footer {
       transform: scale(0.9) rotate(360deg);
       box-shadow: 2px 2px 5px black;
       transition: 3s; } }
-
-.divtransform {
-  animation-name: img-camp;
-  animation-iteration-count: infinite;
-  animation-duration: 3s;
-  animation-delay: 1s;
-  animation-direction: alternate-reverse; }
-
-@keyframes img-camp {
-  0% {
-    transform: scale(1); }
-  100% {
-    transform: scale(1.2); } }
 
 @media screen and (min-width: 480px) {
   header {

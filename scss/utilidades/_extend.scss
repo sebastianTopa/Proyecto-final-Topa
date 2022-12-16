@@ -1,4 +1,14 @@
 %estilosgrid{
-    background-color: tomato;
+    color: black;
+    background-color: $color-fondos;
     font-size: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+%estiloscentrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
